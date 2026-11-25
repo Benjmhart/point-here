@@ -5,7 +5,7 @@ When Claude drives your browser (Claude in Chrome) and you have to read or click
 and an arrow with Claude's words ("click here", "then type the code here"), in a colour picked to stand out against
 that page.
 
-<!-- screenshot / GIF here -->
+![point-here on example.com: a yellow numbered box round a paragraph ("1 read this first") and round a link ("2 then click here"), each with an arrow](docs/example.jpg)
 
 - **Readable on any page:** a 5 px box with a black and white edge, in whichever loud colour (magenta, yellow, cyan,
   lime, orange, red, blue, violet) contrasts most with what the target sits on (WCAG contrast ratio).

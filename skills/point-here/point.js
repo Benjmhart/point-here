@@ -131,7 +131,8 @@ window.pointHere = (targets, opts = {}) => {
     const ax = room === "left" ? L : room === "right" ? L + W : ex, a = Math.atan2(ey - sy, ax - sx), hl = 18;
     const head = (s) => `M${ax - hl * Math.cos(a - s)},${ey - hl * Math.sin(a - s)} L${ax},${ey} L${ax - hl * Math.cos(a + s)},${ey - hl * Math.sin(a + s)}`;
     const d = `M${sx},${sy} L${ax},${ey} ${head(0.5)}`;
-    f.under.setAttribute("d", d); f.line.setAttribute("d", d);
+    // the shape as CSS too: `all: initial` sets the `d` property to none, which beats the attribute in Chrome
+    for (const l of [f.under, f.line]) { l.setAttribute("d", d); l.style.setProperty("d", `path("${d}")`, "important"); }
   };
   // three slow pulses to catch the eye, none if the person asked for reduced motion; driven from the frame loop, so the
   // page's CSS can't stop them

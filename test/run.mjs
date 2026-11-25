@@ -74,8 +74,8 @@ for (const [name, t, id] of [["light, by selector", { sel: "#save", label: "clic
 const tip = await js(`(() => { const R = document.getElementById("__point_here__"), b = R.querySelector("[data-point-here=box]").getBoundingClientRect();
   const p = R.querySelectorAll("path")[1], s = R.querySelector("svg").getBoundingClientRect(), d = p.getAttribute("d").match(/L([\\d.]+),([\\d.]+) M/);
   const x = +d[1] + s.left, y = +d[2] + s.top, edge = Math.min(Math.abs(y - b.top), Math.abs(y - b.bottom), Math.abs(x - b.left), Math.abs(x - b.right));
-  return { edge, svgTop: s.top, stroke: getComputedStyle(p).stroke }; })()`);
-check("hostile page CSS: arrow ends on the box edge, stroked", tip.edge < 2 && tip.svgTop === 0 && tip.stroke !== "none", JSON.stringify(tip));
+  return { edge, svgTop: s.top, stroke: getComputedStyle(p).stroke, drawn: p.getBBox().height + p.getBBox().width }; })()`);
+check("hostile page CSS: arrow drawn, ends on the box edge, stroked", tip.edge < 2 && tip.svgTop === 0 && tip.stroke !== "none" && tip.drawn > 20, JSON.stringify(tip));
 let r = await js(probe([{ sel: "#save", label: "first" }, { text: "Verify", label: "then" }, { sel: "#nope" }]));
 check("several, numbered; a miss is reported", r.drawn === 2 && /2: Verify -> button/.test(r.rep) && /3: not found/.test(r.rep), r.rep);
 r = await js(probe([{ sel: "#inner", label: "in the frame" }]));
