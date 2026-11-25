@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>point-here fixtures</title>
+<style>
+  body { margin: 0; font: 16px system-ui; }
+  section { padding: 40px; height: 260px; }
+  .light { background: #fff; color: #222; }
+  .dark { background: #111; color: #eee; }
+  .busy { background: repeating-linear-gradient(45deg, #f0f, #f0f 10px, #ff0 10px, #ff0 20px); }
+  .busy button { background: #f0f; color: #000; }
+  .magenta { background: #ff00ff; }
+  button { font-size: 16px; padding: 8px 16px; }
+  /* a hostile page: its CSS must not move or hide the overlay */
+  svg { margin-top: -44px; } div { padding: 30px; transform: rotate(3deg); } path { stroke: none !important; }
+</style>
+<section class="light"><button id="save">Save changes</button> <a href="#" id="link">Privacy settings</a></section>
+<section class="dark"><input id="code" placeholder="Enter the 6-digit code"> <button>Verify</button></section>
+<section class="busy"><button id="busy">Accept</button></section>
+<section class="magenta"><button id="mag">On magenta</button></section>
+<section class="light"><iframe id="fr" srcdoc="<button id=inner>Inside a frame</button>" width="300" height="80"></iframe></section>
+<section class="light" style="height:1600px">spacer</section>
+<section class="light"><button id="far">Far down the page</button></section>

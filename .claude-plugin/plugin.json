@@ -1,0 +1,7 @@
+{
+  "name": "point-here",
+  "version": "0.1.0",
+  "description": "Claude points at what you need to read or click on a web page (Claude in Chrome): a big high-contrast numbered box and an arrow, coloured against the page, instead of a description.",
+  "author": { "name": "Benjmhart" },
+  "license": "MIT"
+}

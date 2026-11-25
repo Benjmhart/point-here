@@ -1,0 +1,11 @@
+{
+  "name": "point-here",
+  "owner": { "name": "Benjmhart" },
+  "plugins": [
+    {
+      "name": "point-here",
+      "source": "./",
+      "description": "Claude points at what you need to read or click on a web page: a numbered box and an arrow."
+    }
+  ]
+}
