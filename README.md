@@ -52,3 +52,10 @@ CI runs it on every push.
 ## Licence
 
 MIT
+
+## More tools
+
+- [herdr-queues](https://github.com/Benjmhart/herdr-queues): the sidebar and popup that sort every agent into what needs you now
+- [herdr-inandout](https://github.com/Benjmhart/herdr-inandout): back and forward through the herdr workspaces you visited, like a browser
+- [herdr-machine-icons](https://github.com/Benjmhart/herdr-machine-icons): one icon per pane for the machine it runs on
+- [agent-upgrade](https://github.com/Benjmhart/agent-upgrade): restarts your Claude Code agents onto a new version without losing work
